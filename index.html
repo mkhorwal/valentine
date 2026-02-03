@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Wife ❤️</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe6e6; /* Soft Pink */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .gif_container img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #888;
+            color: white;
+            position: absolute;
+            left: 120px; /* Adjust based on Yes button width */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-content">
+        <div class="gif_container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2I1dm96M3N6Z2Z6ZzZ6ZzZ6ZzZ6ZzZ6ZzZ6ZzZ6ZzZ6ZzZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/v4aWvX98UuS7L2vOQp/giphy.gif" alt="Cute Bear">
+        </div>
+        <h1>Will you be my Valentine? ❤️</h1>
+        <div class="btn-container">
+            <button id="yesBtn" onclick="showLove()">Yes</button>
+            <button id="noBtn" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            // Calculate random positions
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        function showLove() {
+            document.getElementById('main-content').innerHTML = `
+                <div class="gif_container">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2I1dm96M3N6Z2Z6ZzZ6ZzZ6ZzZ6ZzZ6ZzZ6ZzZ6ZzZ6ZzZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/L40NfH9W7hWj2v2X1R/giphy.gif" alt="Happy Bear">
+                </div>
+                <h1>Yay! I love you so much! 🥰❤️</h1>
+                <p style="color: #d63384; font-size: 1.2rem;">Get ready for our date at 7:00 PM!</p>
+            `;
+        }
+    </script>
+</body>
+</html>
